@@ -62,9 +62,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-ink/20 mt-8 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-ink/65 text-xs font-body">
+        <div className="border-t border-ink/20 mt-8 pt-4 text-ink/65 text-xs font-body text-center">
           <span>© 2026 Foodie Choice. All rights reserved.</span>
-          <span>Made with ❤️ for Banyumas UMKM</span>
         </div>
       </div>
     </footer>
