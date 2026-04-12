@@ -101,14 +101,6 @@ export default function Landing() {
 
               <motion.p
                 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.35 }}
-                className="text-white/85 font-body text-base italic mb-2"
-              >
-                when you're hungry, eat local!
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.45 }}
                 className="text-white/80 font-body text-sm leading-relaxed mb-8 max-w-sm"
               >
