@@ -6,6 +6,15 @@ import ImagePlaceholder from './ImagePlaceholder'
 import Badge from './Badge'
 import RatingStars from './RatingStars'
 
+// Eagerly import all product images so Vite bundles them
+const imageMap = import.meta.glob('../../assets/images/*.{jpg,jpeg,png,webp}', { eager: true })
+
+function resolveImage(name) {
+  if (!name) return null
+  const key = Object.keys(imageMap).find((k) => k.includes(`/${name}.`))
+  return key ? imageMap[key].default : null
+}
+
 function formatPrice(price) {
   return new Intl.NumberFormat('id-ID', {
     style: 'currency',
@@ -15,6 +24,8 @@ function formatPrice(price) {
 }
 
 export default function ProductCard({ product, selected = false, compact = false, index = 0 }) {
+  const imgSrc = resolveImage(product.image)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -30,7 +41,17 @@ export default function ProductCard({ product, selected = false, compact = false
           ${selected ? 'ring-2 ring-action border-action' : 'border-container'}`}
       >
         <div className="relative overflow-hidden">
-          <ImagePlaceholder icon={product.imageIcon} aspectRatio="4/3" />
+          {imgSrc ? (
+            <div className="w-full overflow-hidden" style={{ aspectRatio: '4/3' }}>
+              <img
+                src={imgSrc}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          ) : (
+            <ImagePlaceholder icon={product.imageIcon} aspectRatio="4/3" />
+          )}
           {product.badge && (
             <div className="absolute top-2 left-2">
               <Badge label={product.badge} />
