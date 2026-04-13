@@ -3,6 +3,13 @@ import { motion } from 'framer-motion'
 import { MapPin, ArrowLeft, Clock, Truck, CheckCircle, MessageCircle } from 'lucide-react'
 import ImagePlaceholder from '../components/ui/ImagePlaceholder'
 import Avatar from '../components/ui/Avatar'
+
+const imageMap = import.meta.glob('../assets/images/*.{jpg,jpeg,png,webp}', { eager: true })
+function resolveImage(name) {
+  if (!name) return null
+  const key = Object.keys(imageMap).find((k) => k.includes(`/${name}.`))
+  return key ? imageMap[key].default : null
+}
 import RatingStars from '../components/ui/RatingStars'
 import { useProductDetail } from '../hooks/useProductDetail'
 import { useSellerById } from '../hooks/useSellers'
@@ -69,8 +76,18 @@ export default function Detail() {
             transition={{ duration: 0.4 }}
             className="lg:sticky lg:top-24"
           >
-            <div className="rounded-2xl overflow-hidden border-2 border-container shadow-sm max-h-[360px]">
-              <ImagePlaceholder icon={product.imageIcon} aspectRatio="4/3" className="max-h-[360px]" />
+            <div className="rounded-2xl overflow-hidden border-2 border-container shadow-sm">
+              {resolveImage(product.image) ? (
+                <div style={{ aspectRatio: '4/3' }} className="w-full overflow-hidden">
+                  <img
+                    src={resolveImage(product.image)}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <ImagePlaceholder icon={product.imageIcon} aspectRatio="4/3" />
+              )}
             </div>
 
             {/* WhatsApp CTA — visible on desktop inside column */}
