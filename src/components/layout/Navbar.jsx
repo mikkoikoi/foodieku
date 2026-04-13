@@ -12,6 +12,9 @@ export default function Navbar() {
   const links = [
     { to: '/', label: 'Beranda' },
     { to: '/products', label: 'Produk' },
+    { to: '/sellers', label: 'UMKM' },
+    { to: '/about', label: 'Tentang' },
+    { to: '/contact', label: 'Kontak' },
   ]
 
   return (
@@ -29,7 +32,7 @@ export default function Navbar() {
                 key={l.to}
                 to={l.to}
                 className={`text-sm font-body transition-colors duration-150
-                  ${pathname === l.to ? 'text-ink font-semibold' : 'text-ink/75 hover:text-ink'}`}
+                  ${pathname === l.to || (l.to !== '/' && pathname.startsWith(l.to)) ? 'text-ink font-semibold' : 'text-ink/75 hover:text-ink'}`}
               >
                 {l.label}
               </Link>
