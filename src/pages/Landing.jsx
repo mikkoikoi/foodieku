@@ -361,7 +361,7 @@ export default function Landing() {
                   Punya UMKM F&B<br />di Banyumas?
                 </h3>
                 <p className="text-ink/80 text-sm font-body leading-relaxed">
-                  Daftarkan tokomu gratis dan jangkau lebih banyak pembeli lokal lewat Foodie Choice.
+                  Daftarkan tokomu dan jangkau lebih banyak pembeli lokal lewat Foodie Choice. Hubungi kami untuk info lebih lanjut.
                 </p>
               </div>
               <div className="flex lg:justify-end">

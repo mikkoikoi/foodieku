@@ -13,8 +13,8 @@ function InstagramIcon() {
 
 const faqs = [
   {
-    q: 'Apakah Foodie Choice gratis untuk UMKM?',
-    a: 'Ya, sepenuhnya gratis. Kami tidak memungut biaya pendaftaran maupun komisi dari transaksi.',
+    q: 'Berapa biaya pendaftaran UMKM di Foodie Choice?',
+    a: 'Untuk informasi lebih lanjut mengenai paket dan biaya, silakan hubungi kami langsung via WhatsApp.',
   },
   {
     q: 'Berapa lama proses pendaftaran UMKM?',
@@ -154,7 +154,7 @@ export default function Contact() {
               Punya warung atau kedai di Banyumas?
             </h2>
             <p className="text-ink/75 text-sm font-body leading-relaxed">
-              Gratis selamanya. Kami bantu kamu tampil profesional dan mudah ditemukan pembeli lokal. Cukup hubungi kami via WhatsApp dan siapkan info dasar tokomu.
+              Kami bantu kamu tampil profesional dan mudah ditemukan pembeli lokal. Hubungi kami via WhatsApp untuk info lebih lanjut.
             </p>
           </div>
           <div className="relative flex lg:justify-end">
