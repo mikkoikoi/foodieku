@@ -63,7 +63,7 @@ export default function Contact() {
       </section>
 
       {/* Cards */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 -mt-8">
+      <section className="max-w-7xl mx-auto px-6 lg:px-10 mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {/* WhatsApp */}
